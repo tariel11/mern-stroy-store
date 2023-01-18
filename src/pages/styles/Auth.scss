@@ -1,0 +1,25 @@
+.page_wrap{
+  .auth{
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    max-width: 400px;
+    h2{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form{
+      input{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 5px;
+      }
+      .login_wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  } 
+}

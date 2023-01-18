@@ -1,0 +1,54 @@
+.product{
+  position: relative;
+  display: flex; 
+  border: 1px solid #000;
+  .img{
+    width: 30%;
+    padding: 20px;
+    img{width: 100%; height: auto; object-fit: contain;}
+  }
+  .info{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    .title{
+      grid-column: 1 / -1
+    }
+    .price{
+      line-height: 20px;
+    }
+    .summ{
+      font-size: 16px;
+    }
+    .amount{
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      .amount{
+        padding: 5px;
+        display: block;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid chocolate;
+        width: 30%;
+      }
+      .counter{
+        text-align: center;
+        width: 35%;
+        background-color: chocolate;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid chocolate;
+      }
+    }
+  }
+}
+
+.remove{
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px; 
+}

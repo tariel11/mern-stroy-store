@@ -1,0 +1,22 @@
+.basket{
+  padding: 10px;
+  background-color: antiquewhite;
+  .title{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: aqua;
+    @media (max-width: 424px) {
+      font-size: 16px;
+    }
+    span{
+      padding: 5px 0;
+      width: 100%;
+    }
+    .text{
+      background-color: #000;
+      clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+      color: #fff;
+    }
+  }
+}

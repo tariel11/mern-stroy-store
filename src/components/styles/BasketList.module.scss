@@ -1,0 +1,38 @@
+.basket{
+  .add{
+    display: block;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px dashed #000;
+    color: #000;
+    background-color: aliceblue;
+    transition: all ease 0.5s;
+  }
+  .ul{
+    margin-top: 10px;
+  }
+  .info{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      background-color: yellow;
+      padding: 5px;
+    }
+    button{
+      cursor: pointer;
+      padding: 5px;
+      border: none;
+      font-size: 22px;
+      background-color: green;
+      color: #fff;
+    }
+  }
+}
+
+.add:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.497);
+} 

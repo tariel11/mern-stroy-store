@@ -1,0 +1,30 @@
+.item{
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  .itle{
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+    background: none;
+    border: none;
+    margin-bottom: 10px;
+    transition: all ease 0.5s;
+    &:hover{color: blue; text-decoration: underline;}
+  }
+  .li{
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 5px; 
+    color: #000;
+  }
+  .ul_show{
+    padding: 10px !important;
+    border-top: 1px solid #000;
+  }
+  .ul_hide{
+    display: none; 
+  } 
+}

@@ -1,0 +1,17 @@
+.categories{
+  height: fit-content;
+  border: 1px solid #000;
+  padding: 1rem !important;
+  background-color: #b2d611;
+  @media (max-width: 766px) { 
+      display: none; 
+  }
+  h3{
+    font-weight: 700;
+    text-align: center;
+    background-color: blue;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+  } 
+}
