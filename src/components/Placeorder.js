@@ -44,7 +44,6 @@ const Placeorder = () => {
           deliveryPrice,
           totalPrice: totalSum + deliveryPrice,
         },
-
       );
       ctxDispatch({ type: 'CART_CLEAR' });
       dispatch({ type: 'CREATE_SUCCESS' });
@@ -62,7 +61,7 @@ const Placeorder = () => {
         {cartItems.map((product, i) => 
           <li className={s.item} key={i}>
             <div className={s.img} >
-              <img src='../product/img/1.jpeg' alt={product.title} />
+              <img src={product.img} alt={product.title} />
             </div>
             <p className={s.title}>{product.title}</p>
             <p>Цена: <b>{product.price}</b> </p>
