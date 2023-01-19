@@ -9,16 +9,16 @@ const MyNavber = ({style, setShowMenu}) => {
       <h2 onClick={()=>setShowMenu(false)}>Закрыт</h2>
       <ul>
         <li>
-          <Link onClick={()=>setShowMenu(false)} to={HOME_ROUTE}>Главная</Link>
+          <Link to={HOME_ROUTE}>Главная</Link>
         </li>
         <li>
-          <Link onClick={()=>setShowMenu(false)} to={CONTACTS_ROUTE}>Контакты</Link>
+          <Link to={CONTACTS_ROUTE}>Контакты</Link>
         </li>
         <li>
-          <Link onClick={()=>setShowMenu(false)} to={DELIVERY_ROUTE}>Доставка</Link>
+          <Link to={DELIVERY_ROUTE}>Доставка</Link>
         </li>
         <li>
-          <Link onClick={()=>setShowMenu(false)} to={BASKET_ROUTE}>Корзина</Link>
+          <Link to={BASKET_ROUTE}>Корзина</Link>
         </li>
       </ul>
     </div>
