@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mern-stroyStore-frontend/static/css/main.7b9a3961.css",
+    "main.js": "/mern-stroyStore-frontend/static/js/main.8dfa6958.js",
+    "index.html": "/mern-stroyStore-frontend/index.html",
+    "main.7b9a3961.css.map": "/mern-stroyStore-frontend/static/css/main.7b9a3961.css.map",
+    "main.8dfa6958.js.map": "/mern-stroyStore-frontend/static/js/main.8dfa6958.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b9a3961.css",
+    "static/js/main.8dfa6958.js"
+  ]
+}
