@@ -31,21 +31,20 @@ const Placeorder = () => {
 
   const [ dispatch] = useReducer(reducer);
 
-  const placeOrderHandler = async () => {
+  const placeOrderHandler = () => {
     try {
       dispatch({ type: 'CREATE_REQUEST' });
+      // await axios.post(
+      //   '/api/order',
+      //   {
+      //     orderItems: cartItems,
+      //     shippingAddress: shippingAddress,
+      //     itemsPrice: totalSum,
+      //     deliveryPrice,
+      //     totalPrice: totalSum + deliveryPrice,
+      //   },
 
-      await axios.post(
-        '/api/order',
-        {
-          orderItems: cartItems,
-          shippingAddress: shippingAddress,
-          itemsPrice: totalSum,
-          deliveryPrice,
-          totalPrice: totalSum + deliveryPrice,
-        },
-
-      );
+      // );s
       ctxDispatch({ type: 'CART_CLEAR' });
       dispatch({ type: 'CREATE_SUCCESS' });
       localStorage.removeItem('cartItems');
