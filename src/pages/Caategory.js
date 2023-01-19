@@ -4,6 +4,7 @@ import axios from '../utils/axios';
 import Categories from '../components/Categories'
 import ProductList from '../components/ProductList'
 import { Store } from '../utils/store';
+import { dataProducts } from '../utils/data';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -34,8 +35,7 @@ const Caategory = () => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-          const result = await axios.get("/api/product", {params: {category}});
-          dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+          dispatch({ type: "FETCH_SUCCESS", payload: dataProducts });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
@@ -43,15 +43,17 @@ const Caategory = () => {
     fetchData();
   }, [category]);
 
+  const resultProducts = products.filter( (item) => item.category == category)
+
   return (
     <div className='page_wrap'>
     <div className="container">
       <div className="grid">
         <Categories/>
         <div>
-          <h1>Товары по категории: {category}: <small>{products.length}</small> </h1>
+          <h1>Товары по категории: {category}: <small>{resultProducts.length}</small> </h1>
           <ProductList
-          products={products}
+          products={resultProducts}
           loading={loading}
           error={error}
           />

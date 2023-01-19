@@ -4,6 +4,7 @@ import axios from '../utils/axios';
 import Categories from '../components/Categories'
 import ProductList from '../components/ProductList'
 import s from './styles/Home.module.scss'
+import { dataProducts } from '../utils/data';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,8 +30,7 @@ const Home = () => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-        const result = await axios.get("/api/product");
-        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+        dispatch({ type: "FETCH_SUCCESS", payload: dataProducts });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }

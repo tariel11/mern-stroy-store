@@ -4,6 +4,7 @@ import axios from '../utils/axios';
 import { Store } from '../utils/store';
 import ProductList from '../components/ProductList';
 import Categories from '../components/Categories';
+import { dataProducts } from '../utils/data';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -33,8 +34,7 @@ const Search = () => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-          const result = await axios.get("/api/product",  {params: {title}});
-          dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+        dispatch({ type: "FETCH_SUCCESS", payload: dataProducts });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
@@ -42,15 +42,17 @@ const Search = () => {
     fetchData();
   }, [title]);
 
+  const resultProducts = products.filter( (item) => item.title === title)
+
   return (
     <div className='page_wrap'>
       <div className="container">
         <div className="grid">
           <Categories/>
           <div className="search">
-            <h1 style={{'marginBottom': '20px'}}>Результаты по поиску: {title + ' ' + products.length}</h1>
+            <h1 style={{'marginBottom': '20px'}}>Результаты по поиску: {title + ' ' + resultProducts.length}</h1>
             <ProductList
-              products={products}
+              products={resultProducts}
               loading={loading}
               error={error}
             />

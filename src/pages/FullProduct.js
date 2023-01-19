@@ -5,6 +5,7 @@ import axios from '../utils/axios';
 import Categories from '../components/Categories'  
 import { Store } from '../utils/store';
 import s from './styles/FullProduct.module.scss'
+import { dataProducts } from '../utils/data';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,14 +36,14 @@ const FullProduct = () => {
     const fetchData = async () => {
       dispatch({ type: "FETCH_REQUEST" });
       try {
-        const result = await axios.get(`/api/product/${id}`);
-        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+        const product = dataProducts.filter((item => item._id === id))
+        dispatch({ type: "FETCH_SUCCESS", payload: product[0] });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
     };
     fetchData();
-  }, );
+  }, []);
 
   const [add, setAdd] = useState(false)
 
