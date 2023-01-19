@@ -31,9 +31,8 @@ const Placeorder = () => {
 
   const [ dispatch] = useReducer(reducer);
 
-  const placeOrderHandler = () => {
+  const placeOrderHandler =  () => {
     try {
-      dispatch({ type: 'CREATE_REQUEST' });
       // await axios.post(
       //   '/api/order',
       //   {
@@ -46,11 +45,9 @@ const Placeorder = () => {
 
       // );s
       ctxDispatch({ type: 'CART_CLEAR' });
-      dispatch({ type: 'CREATE_SUCCESS' });
       localStorage.removeItem('cartItems');
       setModal(true)
     } catch (err) {
-      dispatch({ type: 'CREATE_FAIL' });
       console.log(err);
     }
   };
